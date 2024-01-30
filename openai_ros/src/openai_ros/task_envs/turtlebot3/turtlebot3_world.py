@@ -211,7 +211,7 @@ class TurtleBot3WorldEnv(turtlebot3_env.TurtleBot3Env):
         self._episode_done = False
 
         discretized_ranges = []
-        mod = len(data.ranges)/new_ranges
+        mod = round(len(data.ranges)/new_ranges)
 
         rospy.logdebug("data=" + str(data))
         rospy.logdebug("new_ranges=" + str(new_ranges))

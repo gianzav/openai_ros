@@ -226,7 +226,7 @@ def GetAllRegisteredGymEnvs():
     return EX: ['Copy-v0', 'RepeatCopy-v0', 'ReversedAddition-v0', ... ]
     """
 
-    all_envs = envs.registry.all()
+    all_envs = envs.registry.values()
     env_ids = [env_spec.id for env_spec in all_envs]
 
     return env_ids

@@ -121,6 +121,7 @@ class TurtleBot3Env(robot_gazebo_env.RobotGazeboEnv):
 
 
     def _check_imu_ready(self):
+        rospy.sleep(1)
         self.imu = None
         rospy.logdebug("Waiting for /imu to be READY...")
         while self.imu is None and not rospy.is_shutdown():
