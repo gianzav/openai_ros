@@ -17,7 +17,7 @@ class TurtleBot3WorldEnv(turtlebot3_env.TurtleBot3Env):
         It will learn how to move around without crashing.
         """
         # This is the path where the simulation files, the Task and the Robot gits will be downloaded if not there
-        ros_ws_abspath = rospy.get_param("/turtlebot3/ros_ws_abspath", None)
+        ros_ws_abspath = os.path.expandvars(rospy.get_param("/turtlebot3/ros_ws_abspath", None))
         assert ros_ws_abspath is not None, "You forgot to set ros_ws_abspath in your yaml file of your main RL script. Set ros_ws_abspath: \'YOUR/SIM_WS/PATH\'"
         assert os.path.exists(ros_ws_abspath), "The Simulation ROS Workspace path " + ros_ws_abspath + \
                                                " DOESNT exist, execute: mkdir -p " + ros_ws_abspath + \
